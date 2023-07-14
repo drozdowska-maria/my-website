@@ -3,28 +3,44 @@ import { ActiveElementType } from "./types";
 
 interface CTAAnimationProps {
   setActiveElement: (arg: ActiveElementType) => void;
+  activeElement: ActiveElementType;
 }
 
-export const CTAAnimation = ({ setActiveElement }: CTAAnimationProps) => {
+export const CTAAnimation = ({
+  activeElement,
+  setActiveElement,
+}: CTAAnimationProps) => {
   return (
     <svg
       width="628"
-      height="516"
-      // EXTENDEND VIEWPORT TO AVOID ANIMATIONS COLLAPSING
-      viewBox="-50 -50 678 564"
+      // EXTENDED VIEWPORT TO AVOID ANIMATIONS COLLAPSING
+      viewBox="-50 -50 728 564"
+      preserveAspectRatio="xMaxYMid meet"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
       <g>
         {/* DRAFTING TRIANGLE */}
         <g
-          className={styles.draftingTriangleWhole}
+          className={
+            activeElement === "drafting-triangle"
+              ? styles.draftingTriangleWholeActive
+              : styles.draftingTriangleWhole
+          }
           onClick={() => setActiveElement("drafting-triangle")}
         >
           {/* ANIMATED ELEMENT */}
-          <g className={styles.draftingTriangle}>
+          <g
+            className={`${styles.draftingTriangle} ${
+              activeElement === "drafting-triangle" ? styles.active : ""
+            }`}
+          >
             <path
-              className={`${styles.draftingTriangleFill} ${styles.stroke}`}
+              className={`${
+                activeElement === "drafting-triangle"
+                  ? styles.draftingTriangleFillActive
+                  : styles.draftingTriangleFill
+              } ${styles.stroke}`}
               fillRule="evenodd"
               clipRule="evenodd"
               d="M1.00004 174.609L1.00005 1.29376L166.863 1.29377L83.9317 87.9515L17.5864 156.04L1.00004 174.609ZM19.9559 21.1012L19.9559 127.567L30.1446 116.16L70.8996 74.3339L121.843 21.1013L19.9559 21.1012Z"
@@ -48,10 +64,7 @@ export const CTAAnimation = ({ setActiveElement }: CTAAnimationProps) => {
           />
         </g>
         {/* MONITOR */}
-        <g
-          className={styles.monitor}
-          onClick={() => setActiveElement("monitor")}
-        >
+        <g>
           <path
             className={`${styles.metal} ${styles.stroke}`}
             d="M341.84 509.532H493.122V515H341.84V509.532Z"
@@ -60,23 +73,54 @@ export const CTAAnimation = ({ setActiveElement }: CTAAnimationProps) => {
             className={`${styles.metal} ${styles.stroke}`}
             d="M456.669 509.532C446.387 490.566 445.937 479.437 456.669 458.497H381.939C392.795 479.818 392.077 490.9 381.939 509.532H456.669Z"
           />
-          <path
-            className={`${styles.metal} ${styles.stroke}`}
-            d="M217.962 174.66H617C622.799 174.66 627.5 179.361 627.5 185.16V454.788C627.5 460.587 622.799 465.288 617 465.288H217.962C212.163 465.288 207.462 460.587 207.462 454.788V185.16C207.462 179.361 212.163 174.66 217.962 174.66Z"
-          />
-          <path
-            className={styles.monitorScreen}
-            d="M223.253 180.128H613.532C618.226 180.128 622.032 183.934 622.032 188.628V449.497C622.032 454.192 618.226 457.997 613.532 457.997H223.253C218.558 457.997 214.753 454.192 214.753 449.497V188.628C214.753 183.934 218.559 180.128 223.253 180.128Z"
-          />
-          <path
-            className={styles.monitorText}
-            d="M241.191 227.018H239.544V216.16L236.154 217.45V215.946L241.057 214.06H241.191V227.018Z"
-          />
-          {/* ANIMATED ELEMENT */}
-          <path
-            className={`${styles.monitorText} ${styles.cursor}`}
-            d="M265.952 228.737H264.626V212.237H265.952V228.737Z"
-          />
+          <g
+            className={
+              activeElement === "monitor"
+                ? styles.monitorActive
+                : styles.monitor
+            }
+            onClick={() => setActiveElement("monitor")}
+          >
+            <path
+              className={`${styles.metal} ${styles.stroke}`}
+              d="M217.962 174.66H617C622.799 174.66 627.5 179.361 627.5 185.16V454.788C627.5 460.587 622.799 465.288 617 465.288H217.962C212.163 465.288 207.462 460.587 207.462 454.788V185.16C207.462 179.361 212.163 174.66 217.962 174.66Z"
+            />
+            <path
+              className={
+                activeElement === "monitor"
+                  ? styles.monitorScreenActive
+                  : styles.monitorScreen
+              }
+              d="M223.253 180.128H613.532C618.226 180.128 622.032 183.934 622.032 188.628V449.497C622.032 454.192 618.226 457.997 613.532 457.997H223.253C218.558 457.997 214.753 454.192 214.753 449.497V188.628C214.753 183.934 218.559 180.128 223.253 180.128Z"
+            />
+            <path
+              className={
+                activeElement === "monitor"
+                  ? styles.monitorTextActive
+                  : styles.monitorText
+              }
+              d="M241.191 227.018H239.544V216.16L236.154 217.45V215.946L241.057 214.06H241.191V227.018Z"
+            />
+            {/* ANIMATED ELEMENT */}
+            <path
+              className={`${
+                activeElement === "monitor"
+                  ? styles.monitorTextActive
+                  : styles.monitorText
+              } ${styles.cursor}`}
+              d="M265.952 228.737H264.626V212.237H265.952V228.737Z"
+            />
+            <g id="JS">
+              <path
+                d="M544.808 387.091H555.447V422.588C555.447 425.869 554.71 428.72 553.235 431.139C551.777 433.559 549.747 435.423 547.145 436.732C544.543 438.041 541.519 438.696 538.072 438.696C535.006 438.696 532.222 438.157 529.719 437.08C527.234 435.987 525.262 434.329 523.803 432.109C522.345 429.871 521.624 427.063 521.641 423.682H532.354C532.388 425.024 532.661 426.176 533.175 427.137C533.705 428.082 534.426 428.811 535.337 429.325C536.265 429.822 537.359 430.07 538.619 430.07C539.944 430.07 541.063 429.789 541.974 429.225C542.902 428.645 543.607 427.8 544.087 426.69C544.568 425.579 544.808 424.212 544.808 422.588V387.091Z"
+                fill="#2E2E2E"
+              />
+              <path
+                d="M591.964 401.732C591.765 399.727 590.911 398.169 589.403 397.059C587.895 395.949 585.849 395.393 583.263 395.393C581.507 395.393 580.024 395.642 578.814 396.139C577.604 396.62 576.676 397.291 576.03 398.153C575.4 399.014 575.085 399.992 575.085 401.086C575.052 401.997 575.243 402.793 575.657 403.472C576.088 404.152 576.676 404.74 577.422 405.237C578.168 405.718 579.029 406.14 580.007 406.505C580.985 406.853 582.029 407.151 583.139 407.4L587.713 408.494C589.934 408.991 591.972 409.654 593.828 410.482C595.684 411.311 597.292 412.33 598.651 413.54C600.009 414.75 601.062 416.175 601.808 417.815C602.57 419.456 602.959 421.337 602.976 423.458C602.959 426.574 602.164 429.275 600.589 431.562C599.032 433.832 596.778 435.597 593.828 436.857C590.895 438.099 587.357 438.721 583.214 438.721C579.104 438.721 575.524 438.091 572.475 436.832C569.442 435.572 567.073 433.708 565.366 431.239C563.675 428.753 562.789 425.679 562.706 422.016H573.121C573.237 423.723 573.726 425.148 574.588 426.292C575.466 427.419 576.635 428.272 578.093 428.852C579.568 429.416 581.233 429.697 583.089 429.697C584.912 429.697 586.495 429.432 587.837 428.902C589.196 428.372 590.249 427.634 590.994 426.69C591.74 425.745 592.113 424.66 592.113 423.433C592.113 422.29 591.773 421.329 591.094 420.55C590.431 419.771 589.453 419.108 588.16 418.561C586.884 418.014 585.318 417.517 583.462 417.07L577.919 415.678C573.627 414.634 570.238 413.001 567.752 410.781C565.266 408.56 564.032 405.569 564.048 401.807C564.032 398.724 564.852 396.031 566.509 393.728C568.183 391.424 570.478 389.626 573.395 388.334C576.312 387.041 579.626 386.395 583.338 386.395C587.116 386.395 590.414 387.041 593.232 388.334C596.065 389.626 598.269 391.424 599.844 393.728C601.418 396.031 602.23 398.7 602.28 401.732H591.964Z"
+                fill="#2E2E2E"
+              />
+            </g>
+          </g>
         </g>
         {/* CUP WITH BRUSHES */}
         <g
@@ -84,7 +128,11 @@ export const CTAAnimation = ({ setActiveElement }: CTAAnimationProps) => {
           onClick={() => setActiveElement("cup")}
         >
           {/* BRUSH 1 - ANIMATED ELEMENT */}
-          <g className={styles.brush1}>
+          <g
+            className={`${styles.brush1} ${
+              activeElement === "cup" ? styles.active : ""
+            }`}
+          >
             <rect
               x="71.1539"
               y="488.188"
@@ -111,7 +159,11 @@ export const CTAAnimation = ({ setActiveElement }: CTAAnimationProps) => {
             />
           </g>
           {/* BRUSH 2 - ANIMATED ELEMENT */}
-          <g className={styles.brush2}>
+          <g
+            className={`${styles.brush2} ${
+              activeElement === "cup" ? styles.active : ""
+            }`}
+          >
             <rect
               x="58.0029"
               y="477.125"

@@ -12,3 +12,7 @@
   font-family: "Maven Pro", sans-serif;
   color: var(--black);
 }
+
+h1 {
+  font-weight: 400;
+}
