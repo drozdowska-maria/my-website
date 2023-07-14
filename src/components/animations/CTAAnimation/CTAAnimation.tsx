@@ -1,23 +1,35 @@
 import styles from "./CTAAnimation.module.css";
+import { ActiveElementType } from "./types";
 
-export const CTAAnimation = () => {
+interface CTAAnimationProps {
+  setActiveElement: (arg: ActiveElementType) => void;
+}
+
+export const CTAAnimation = ({ setActiveElement }: CTAAnimationProps) => {
   return (
     <svg
       width="628"
       height="516"
+      // EXTENDEND VIEWPORT TO AVOID ANIMATIONS COLLAPSING
       viewBox="-50 -50 678 564"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
       <g>
-        <g id="square-whole">
-          <g className={styles.square}>
+        {/* DRAFTING TRIANGLE */}
+        <g
+          className={styles.draftingTriangleWhole}
+          onClick={() => setActiveElement("drafting-triangle")}
+        >
+          {/* ANIMATED ELEMENT */}
+          <g className={styles.draftingTriangle}>
             <path
-              className={`${styles.squareFill} ${styles.stroke}`}
+              className={`${styles.draftingTriangleFill} ${styles.stroke}`}
               fillRule="evenodd"
               clipRule="evenodd"
               d="M1.00004 174.609L1.00005 1.29376L166.863 1.29377L83.9317 87.9515L17.5864 156.04L1.00004 174.609ZM19.9559 21.1012L19.9559 127.567L30.1446 116.16L70.8996 74.3339L121.843 21.1013L19.9559 21.1012Z"
             />
+            {/* TRIANGLE DIVIDERS */}
             <path
               className={styles.stroke}
               d="M155.664 1.00563L155.664 4.29107M149.641 1.00563L149.641 4.29107M144.165 1.5532L144.165 5.38621M138.689 1.5532L138.689 4.29107M133.213 1.5532L133.213 4.29107M127.738 1.5532L127.738 5.38621M122.262 1.5532L122.262 4.29107M116.786 1.5532L116.786 4.29107M111.31 1.5532L111.31 5.38621M105.835 1.5532L105.835 4.29106M100.359 1.5532L100.359 4.29106M94.8833 1.5532L94.8833 5.38621M89.4076 1.5532L89.4076 4.29106M83.9318 1.5532L83.9318 4.29106M78.4561 1.5532L78.4561 5.38621M72.9804 1.00562L72.9804 4.29106M67.5046 1.5532L67.5046 4.29106M62.0289 1.5532L62.0289 5.38621M56.5532 1.5532L56.5532 4.29106M51.0774 1.5532L51.0774 4.29106M45.6017 1.55319L45.6017 5.38621M40.126 1.55319L40.126 4.29106M34.6503 1.55319L34.6503 4.29106M29.1745 1.55319L29.1745 5.3862M23.6988 1.55319L23.6988 4.29106M18.2231 1.55319L18.2231 4.29106M12.7473 1.55319L12.7473 5.3862M7.2716 1.55319L7.2716 4.29106"
@@ -27,6 +39,7 @@ export const CTAAnimation = () => {
               d="M1.00009 7.99026L4.28553 7.99026M1.00009 14.0136L4.28553 14.0136M1.54767 19.4893L5.38068 19.4893M1.54767 24.965L4.28553 24.965M1.54767 30.4408L4.28553 30.4408M1.54767 35.9165L5.38068 35.9165M1.54767 41.3922L4.28553 41.3922M1.54767 46.8679L4.28553 46.8679M1.54767 52.3437L5.38068 52.3437M1.54767 57.8194L4.28553 57.8194M1.54767 63.2951L4.28553 63.2951M1.54767 68.7709L5.38068 68.7709M1.54767 74.2466L4.28553 74.2466M1.54767 79.7223L4.28553 79.7223M1.54767 85.1981L5.38068 85.1981M1.00009 90.6738L4.28553 90.6738M1.54767 96.1495L4.28553 96.1495M1.54767 101.625L5.38068 101.625M1.54767 107.101L4.28553 107.101M1.54767 112.577L4.28553 112.577M1.54767 118.052L5.38068 118.052M1.54767 123.528L4.28553 123.528M1.54767 129.004L4.28553 129.004M1.54767 134.48L5.38068 134.48M1.54767 139.955L4.28553 139.955M1.54767 145.431L4.28553 145.431M1.54767 150.907L5.38068 150.907M1.54767 156.383L4.28553 156.383"
             />
           </g>
+          {/* NAIL */}
           <circle
             className={`${styles.metal} ${styles.stroke}`}
             cx="22.8721"
@@ -34,7 +47,11 @@ export const CTAAnimation = () => {
             r="4.96802"
           />
         </g>
-        <g id="monitor">
+        {/* MONITOR */}
+        <g
+          className={styles.monitor}
+          onClick={() => setActiveElement("monitor")}
+        >
           <path
             className={`${styles.metal} ${styles.stroke}`}
             d="M341.84 509.532H493.122V515H341.84V509.532Z"
@@ -55,14 +72,19 @@ export const CTAAnimation = () => {
             className={styles.monitorText}
             d="M241.191 227.018H239.544V216.16L236.154 217.45V215.946L241.057 214.06H241.191V227.018Z"
           />
+          {/* ANIMATED ELEMENT */}
           <path
-            id="line"
-            className={styles.monitorText}
+            className={`${styles.monitorText} ${styles.cursor}`}
             d="M265.952 228.737H264.626V212.237H265.952V228.737Z"
           />
         </g>
-        <g id="cup">
-          <g id="brush_1">
+        {/* CUP WITH BRUSHES */}
+        <g
+          className={styles.cupWithBrushes}
+          onClick={() => setActiveElement("cup")}
+        >
+          {/* BRUSH 1 - ANIMATED ELEMENT */}
+          <g className={styles.brush1}>
             <rect
               x="71.1539"
               y="488.188"
@@ -84,47 +106,46 @@ export const CTAAnimation = () => {
               className={styles.stroke}
             />
             <path
-              id="Vector 6"
+              className={`${styles.brush1Hand} ${styles.stroke}`}
               d="M86.2394 356.769C86.2342 361.174 76.8742 489.45 76.8742 489.45L72.3288 489.129C72.3288 489.129 80.7684 361.733 81.694 356.448C82.6197 351.163 86.2446 352.364 86.2394 356.769Z"
-              fill="#CC7979"
             />
           </g>
-          <g id="brush_2">
+          {/* BRUSH 2 - ANIMATED ELEMENT */}
+          <g className={styles.brush2}>
             <rect
-              id="Rectangle 7"
               x="58.0029"
               y="477.125"
               width="9.93605"
               height="8.11337"
-              fill="#D9D9D9"
+              className={`${styles.metal} ${styles.stroke}`}
             />
-            <g id="Vector 9">
+            <g>
               <path
                 d="M66.6163 483.916L79.375 496.675C76.3802 498.8 73.6932 500.46 71.1729 501.635C66.6551 503.741 62.673 504.288 58.4142 503.161C54.824 502.211 51.0372 500.072 46.5668 496.675L59.3256 483.916H66.6163Z"
-                fill="white"
+                className={`${styles.brushTip} ${styles.stroke}`}
               />
-              <path d="M71.1729 501.635C73.6932 500.46 76.3802 498.8 79.375 496.675L66.6163 483.916H59.3256L46.5668 496.675C51.0372 500.072 54.824 502.211 58.4142 503.161C62.673 504.288 66.6551 503.741 71.1729 501.635ZM71.1729 501.635L68.4389 494.852" />
+              <path
+                className={styles.stroke}
+                d="M71.1729 501.635C73.6932 500.46 76.3802 498.8 79.375 496.675L66.6163 483.916H59.3256L46.5668 496.675C51.0372 500.072 54.824 502.211 58.4142 503.161C62.673 504.288 66.6551 503.741 71.1729 501.635ZM71.1729 501.635L68.4389 494.852"
+              />
             </g>
             <path
-              id="Vector 7"
+              className={`${styles.brush2Hand} ${styles.stroke}`}
               d="M68.8318 318.974C69.2348 324.231 66.7517 477.92 66.7517 477.92L59.7044 477.828C59.7044 477.828 60.8486 325.248 61.7846 318.882C62.7205 312.515 68.4289 313.716 68.8318 318.974Z"
-              fill="#E0A765"
             />
           </g>
+          {/* BRUSH 3 */}
           <path
-            id="Vector 8"
+            className={`${styles.brush3Hand} ${styles.stroke}`}
             d="M47.1178 390.436C47.4673 391.973 49.7701 437.425 49.7701 437.425L45.8572 437.646C45.8572 437.646 42.838 392.569 43.2049 390.657C43.5718 388.744 46.7683 388.898 47.1178 390.436Z"
-            fill="#8BAA80"
           />
           <path
-            id="Vector 5"
+            className={`${styles.cup} ${styles.stroke}`}
             d="M84.8431 436.527C84.8431 436.527 80.2864 510.345 77.5524 513.079C74.8184 515.813 44.7443 514.902 41.0989 513.079C37.4536 511.256 33.8082 436.527 33.8082 436.527H84.8431Z"
-            fill="#6C4750"
           />
           <path
-            id="Rectangle 6"
+            className={styles.cupGlow}
             d="M66.6163 437.438H79.3751C79.3751 437.438 77.5526 468.423 76.6411 477.537C75.7297 486.65 68.4391 485.739 67.5278 477.537C66.6164 469.335 66.6163 437.438 66.6163 437.438Z"
-            fill="#87707B"
           />
         </g>
       </g>

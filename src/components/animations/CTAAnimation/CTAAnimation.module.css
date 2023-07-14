@@ -1,16 +1,29 @@
+/* SVG PALETTE */
+
 :root {
   --square: #594ca6;
   --grey: #d9d9d9;
   --screen: #2e2e2e;
+  --brush-1-hand: #cc7979;
+  --brush-2-hand: #e0a765;
+  --brush-3-hand: #8baa80;
+  --cup: #6c4750;
 }
+
+/* SVG STYLES */
 
 .stroke {
   stroke: var(--black);
 }
 
-.squareFill {
+.draftingTriangleFill {
   fill: var(--square);
+  transition: fill-opacity 0.3s;
   fill-opacity: 0.45;
+}
+
+.draftingTriangleFill:hover {
+  fill-opacity: 0.7;
 }
 
 .metal {
@@ -27,4 +40,101 @@
 
 .brushTip {
   fill: var(--white);
+}
+
+.brush1Hand {
+  fill: var(--brush-1-hand);
+}
+
+.brush2Hand {
+  fill: var(--brush-2-hand);
+}
+
+.brush3Hand {
+  fill: var(--brush-3-hand);
+}
+
+.cupWithBrushes {
+  scale: 1;
+  translate: 0px 0px;
+  rotate: 0deg;
+  transition: all 0.3s;
+}
+
+.cupWithBrushes:hover {
+  scale: 1.1;
+  rotate: 3deg;
+  translate: 40px -70px;
+}
+
+.cup {
+  fill: var(--cup);
+}
+
+.cupGlow {
+  fill: #ffffff20;
+}
+
+/* INFINITE ANIMATIONS */
+
+.draftingTriangle {
+  animation: 1s draftingTriangleAnimation ease-in-out alternate infinite 0.3s;
+}
+
+.draftingTriangleWhole {
+  scale: 1;
+  transition: scale 0.5s;
+}
+
+.draftingTriangleWhole:hover {
+  cursor: pointer;
+  scale: 1.1;
+}
+
+.cursor {
+  animation: 0.5s cursorAnimation alternate infinite;
+}
+
+.brush1 {
+  animation: 1s brush1Animation alternate infinite;
+}
+
+.brush2 {
+  animation: 1s brush2Animation alternate infinite 0.5s;
+}
+
+@keyframes draftingTriangleAnimation {
+  from {
+    rotate: 6deg;
+  }
+  to {
+    rotate: -2deg;
+  }
+}
+
+@keyframes cursorAnimation {
+  from {
+    fill: none;
+  }
+  to {
+    fill: var(--white);
+  }
+}
+
+@keyframes brush1Animation {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(-100px);
+  }
+}
+
+@keyframes brush2Animation {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(-110px);
+  }
 }
