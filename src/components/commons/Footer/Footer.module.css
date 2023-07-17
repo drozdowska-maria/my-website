@@ -1,0 +1,26 @@
+.wrapper {
+  background-color: var(--background-dark);
+  position: relative;
+  z-index: 2;
+  height: 90px;
+  border-top: 2px solid var(--black);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  gap: 10px;
+}
+
+.wrapper p {
+  color: var(--white);
+  font-size: 10px;
+}
+
+.iconsWrapper {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  align-items: center;
+}

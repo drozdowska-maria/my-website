@@ -1,29 +1,31 @@
-.container {
-  min-height: 100vh;
+.mainWrapper {
+  height: 100vh;
   display: flex;
   flex-direction: column;
 }
 
 .svgWrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100vw;
-  border-bottom: 1px solid var(--black);
-  background-color: var(--background-accent-color);
-  padding-top: 20vh;
-}
-
-.content {
+  /* padding-top: 20px; */
   flex: 1;
   display: flex;
   justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  gap: 20px;
+  align-items: flex-end;
+  width: 100vw;
+  border-bottom: 1px solid var(--background-dark);
+  background-color: var(--background-light);
 }
 
-.header {
-  font-weight: 400;
-  text-align: center;
+.content {
+  background-color: var(--black);
+  padding-top: 3px;
+  padding-bottom: 2px;
+  height: 0px;
+  width: 100vw;
+  transition: all 1s;
+  display: flex;
+  gap: 3px;
+}
+
+.activeContent {
+  height: 250px;
 }

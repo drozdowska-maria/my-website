@@ -1,0 +1,24 @@
+.wrapper {
+  height: 80px;
+  border-bottom: 1.5px solid var(--background-dark);
+  background-color: var(--background-light);
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+}
+
+.container {
+  max-width: 1500px;
+  width: 100%;
+  padding-left: 50px;
+  padding-right: 50px;
+  display: flex;
+  align-items: center;
+  height: inherit;
+  justify-content: space-between;
+}
+
+.buttonWrapper {
+  display: flex;
+  gap: 40px;
+}

@@ -1,0 +1,26 @@
+.button {
+  margin-top: 3px;
+  border: none;
+  background-color: transparent;
+  font-size: 18px;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.border {
+  margin-top: 3px;
+  width: 0px;
+  height: 2px;
+  background-color: var(--accent);
+  transition: width 0.3s;
+}
+
+.button:hover .border,
+.activeBorder {
+  width: 110%;
+}
+
+.button:active,
+.activeButton {
+  color: var(--accent);
+}

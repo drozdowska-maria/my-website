@@ -1,8 +1,9 @@
 :root {
-  --background-accent-color: #fcf4f4;
+  --background-light: #fcf4f4;
   --white: #ffffff;
-  --black: #3d3d3d;
+  --background-dark: #3d3d3d;
   --accent: #eb1764;
+  --black: #202020;
 }
 
 * {
@@ -10,7 +11,7 @@
   padding: 0;
   margin: 0;
   font-family: "Maven Pro", sans-serif;
-  color: var(--black);
+  color: var(--background-dark);
 }
 
 h1 {

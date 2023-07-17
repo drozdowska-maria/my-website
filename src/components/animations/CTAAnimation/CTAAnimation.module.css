@@ -12,8 +12,13 @@
 
 /* SVG STYLES */
 
+.svg {
+  height: 100%;
+  width: auto;
+}
+
 .stroke {
-  stroke: var(--black);
+  stroke: var(--background-dark);
 }
 
 .draftingTriangleFill {
@@ -141,16 +146,16 @@
 
 @keyframes draftingTriangleAnimation {
   from {
-    rotate: 6deg;
+    transform: rotate(6deg);
   }
   to {
-    rotate: -2deg;
+    transform: rotate(-2deg);
   }
 }
 
 @keyframes cursorAnimation {
   from {
-    fill: none;
+    fill: transparent;
   }
   to {
     fill: var(--white);

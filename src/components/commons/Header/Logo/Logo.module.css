@@ -1,0 +1,16 @@
+.button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.icon {
+  fill: #ffffff;
+  stroke: #3d3d3d;
+  transition: fill 0.3s;
+}
+
+.button:hover .icon,
+.activeIcon {
+  fill: var(--background-dark);
+}
