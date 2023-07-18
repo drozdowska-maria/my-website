@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 import CTAAnimation from "./components/animations/CTAAnimation/CTAAnimation";
 import { ActiveElementType } from "./components/animations/CTAAnimation/types";
 import styles from "./App.module.css";
@@ -8,7 +8,6 @@ import Technologies from "./components/commons/Technologies/Technologies";
 import { AnimatePresence } from "framer-motion";
 
 function App() {
-  const contentRef = useRef<HTMLDivElement>(null);
   const [activeElement, setActiveElement] = useState<ActiveElementType>("");
 
   return (
@@ -24,10 +23,7 @@ function App() {
         />
       </div>
       <div
-        ref={contentRef}
-        className={`${styles.content} ${
-          activeElement ? styles.activeContent : ""
-        }`}
+        className={`${styles.content} ${!!activeElement ? styles.active : ""}`}
       >
         <AnimatePresence mode="wait">
           {activeElement === "monitor" && <Technologies />}

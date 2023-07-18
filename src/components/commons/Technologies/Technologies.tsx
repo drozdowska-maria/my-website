@@ -1,10 +1,10 @@
-import { AnimatePresence } from "framer-motion";
 import JavaScriptIcon from "./Icons/JavaScriptIcon";
 import NextjsIcon from "./Icons/NextjsIcon";
 import ReactIcon from "./Icons/ReactIcon";
 import ReactNativeIcon from "./Icons/ReactNativeIcon";
 import TypeScriptIcon from "./Icons/TypeScriptIcon";
 import TechnologiesItem from "./TechnologiesItem/TechnologiesItem";
+import styles from "./Technologies.module.css";
 
 const technologiesData = [
   { activeBg: "#F0DB4F", Icon: JavaScriptIcon, id: "javascript" },
@@ -16,7 +16,7 @@ const technologiesData = [
 
 const Technologies = () => {
   return (
-    <>
+    <div className={styles.wrapper}>
       {technologiesData.map((technology, index) => (
         <TechnologiesItem
           key={technology.id}
@@ -25,7 +25,7 @@ const Technologies = () => {
           index={index}
         />
       ))}
-    </>
+    </div>
   );
 };
 

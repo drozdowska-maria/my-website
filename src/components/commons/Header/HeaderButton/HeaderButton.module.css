@@ -5,6 +5,8 @@
   font-size: 18px;
   cursor: pointer;
   transition: color 0.2s;
+  white-space: nowrap;
+  width: fit-content;
 }
 
 .border {

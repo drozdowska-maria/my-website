@@ -1,4 +1,6 @@
+import { useState } from "react";
 import { ActiveElementType } from "../../animations/CTAAnimation/types";
+import HamburgerButton from "./HamburgerButton/HamburgerButton";
 import styles from "./Header.module.css";
 import HeaderButton from "./HeaderButton/HeaderButton";
 import Logo from "./Logo/Logo";
@@ -9,36 +11,54 @@ interface HeaderProps {
 }
 
 const Header = ({ activeElement, setActiveElement }: HeaderProps) => {
+  const [openDrawer, setOpenDrawer] = useState(false);
+
+  const toggleDrawer = () => {
+    setOpenDrawer((prevValue) => !prevValue);
+  };
+
+  const handleActiveElement = (value: ActiveElementType) => {
+    setActiveElement(value);
+    setOpenDrawer(false);
+  };
   // TODO: translations
   // TODO: mobile
   return (
-    <div className={styles.wrapper}>
+    <div className={`${styles.wrapper} ${openDrawer ? styles.open : ""}`}>
       <div className={styles.container}>
-        <Logo
-          isActive={!activeElement}
-          onLogoClick={() => setActiveElement("")}
-        />
-        <div className={styles.buttonWrapper}>
+        <div className={`${styles.row} ${openDrawer ? styles.open : ""}`}>
+          <Logo
+            isActive={!activeElement}
+            onLogoClick={() => handleActiveElement("")}
+          />
+          <HamburgerButton open={openDrawer} onClick={toggleDrawer} />
+        </div>
+        <div
+          className={`${styles.buttonWrapper} ${openDrawer ? styles.open : ""}`}
+        >
           <HeaderButton
             isActive={activeElement === "drafting-triangle"}
-            onClick={() => setActiveElement("drafting-triangle")}
+            onClick={() => handleActiveElement("drafting-triangle")}
           >
             o mnie
           </HeaderButton>
           <HeaderButton
             isActive={activeElement === "monitor"}
-            onClick={() => setActiveElement("monitor")}
+            onClick={() => handleActiveElement("monitor")}
           >
             technologie
           </HeaderButton>
           <HeaderButton
             isActive={activeElement === "cup"}
-            onClick={() => setActiveElement("cup")}
+            onClick={() => handleActiveElement("cup")}
           >
             portfolio
           </HeaderButton>
           {/* TODO: language dropdown */}
         </div>
+        <div
+          className={`${styles.backdrop} ${openDrawer ? styles.open : ""}`}
+        />
       </div>
     </div>
   );

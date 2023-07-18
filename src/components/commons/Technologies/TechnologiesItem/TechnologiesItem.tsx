@@ -21,7 +21,7 @@ const TechnologiesItem = ({ activeBg, Icon, index }: TechnologiesItemProps) => {
       onMouseOut={() => setIsHovered(false)}
       style={{ backgroundColor: isHovered ? activeBg : "#3d3d3d" }}
     >
-      <Icon fill={isHovered ? undefined : "#d9d9d9"} />
+      <Icon fill={isHovered ? undefined : "#d9d9d9c2"} />
     </motion.div>
   );
 };

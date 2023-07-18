@@ -2,10 +2,10 @@
   height: 100vh;
   display: flex;
   flex-direction: column;
+  transition: all 0.3s;
 }
 
 .svgWrapper {
-  /* padding-top: 20px; */
   flex: 1;
   display: flex;
   justify-content: center;
@@ -20,12 +20,32 @@
   padding-top: 3px;
   padding-bottom: 2px;
   height: 0px;
+  max-height: 0px;
   width: 100vw;
   transition: all 1s;
   display: flex;
   gap: 3px;
 }
 
-.activeContent {
-  height: 250px;
+.content.active {
+  height: 25vh;
+  max-height: 25vh;
+}
+
+@media screen and (max-width: 600px) {
+  .mainWrapper {
+    height: 100%;
+    min-height: 100vh;
+  }
+
+  .svgWrapper {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 80px;
+  }
+
+  .content.active {
+    height: 100%;
+    max-height: 2000px;
+  }
 }

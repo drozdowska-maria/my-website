@@ -3,5 +3,15 @@
   flex: 1;
   justify-content: center;
   align-items: center;
-  transition: all 0.3s;
+  transition: all 0.5s;
+  min-width: 280px;
+  min-height: 200px;
+}
+
+.wrapper svg {
+  transition: all 0.5s;
+}
+
+.wrapper:hover svg {
+  scale: 1.2;
 }
