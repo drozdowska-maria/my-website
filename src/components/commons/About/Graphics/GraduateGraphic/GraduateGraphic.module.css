@@ -1,0 +1,40 @@
+:root {
+  --drafting-traingle: #6267d2;
+  --graduation-hat: #232323;
+  --graduation-hat-darker: #181818;
+  --graduation-hat-accent: #ffc700;
+}
+
+.base {
+  transition: all 0.3s;
+}
+
+.stroke {
+  stroke: var(--black);
+}
+
+.triangle {
+  transform-origin: center;
+  transform: rotate(-10deg);
+}
+
+.hat {
+  transform-origin: center;
+  transform: translateY(-15px) rotate(10deg) scale(1.1);
+}
+
+.triangleColor {
+  fill: var(--drafting-traingle);
+}
+
+.grey {
+  fill: var(--grey);
+}
+
+.hatAccent {
+  fill: var(--graduation-hat-accent);
+}
+
+.hatColor {
+  fill: var(--graduation-hat-darker);
+}

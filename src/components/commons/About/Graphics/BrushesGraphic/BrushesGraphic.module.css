@@ -1,0 +1,37 @@
+.base {
+  transition: all 0.3s;
+  stroke: var(--black);
+}
+
+.brush {
+  transition: all 0.3s;
+  transform-origin: center;
+}
+
+.brush1Animated {
+  rotate: 5deg;
+}
+
+.brush2Animated {
+  rotate: -5deg;
+}
+
+.metal {
+  fill: var(--grey);
+}
+
+.brushTip {
+  fill: var(--white);
+}
+
+.brush1HandColor {
+  fill: var(--brush-1-hand);
+}
+
+.brush2HandColor {
+  fill: var(--brush-2-hand);
+}
+
+.brushHandGrey {
+  fill: var(--grey);
+}

@@ -33,6 +33,7 @@
   .wrapper {
     position: fixed;
     height: auto;
+    border: none;
     background-color: transparent;
     z-index: 3;
   }
@@ -52,12 +53,9 @@
     width: 100vw;
     height: 80px;
     background-color: var(--background-light);
+    border-bottom: 1.5px solid var(--background-dark);
     top: 0;
     z-index: 3;
-  }
-
-  .row.open {
-    border-bottom: 1.5px solid var(--background-dark);
   }
 
   .buttonWrapper {

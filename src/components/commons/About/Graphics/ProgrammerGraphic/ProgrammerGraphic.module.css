@@ -1,0 +1,66 @@
+.base {
+  transition: all 0.3s;
+}
+
+.stroke {
+  stroke: var(--black);
+}
+
+.grey {
+  fill: var(--grey);
+}
+
+.white {
+  fill: var(--white);
+}
+
+.shirtColor {
+  fill: var(--shirt);
+}
+
+.skinColor {
+  fill: var(--skin);
+}
+
+.cheeks {
+  fill: var(--cheeks);
+}
+
+.hair {
+  fill: var(--hair);
+}
+
+.code {
+  fill: var(--code);
+}
+
+.duckBeak {
+  fill: var(--duck-beak);
+}
+
+.duckEye {
+  fill: var(--black);
+}
+
+.duckBody {
+  fill: var(--duck-body);
+}
+
+.lightBulbColor {
+  fill: var(--light-bulb);
+}
+
+.girl {
+  transform-origin: center;
+  transform: rotate(-5deg);
+}
+
+.duck {
+  transform-origin: center;
+  transform: scale(1.2) rotate(10deg);
+}
+
+.lightBulb {
+  transform-origin: center;
+  transform: rotate(-5deg);
+}

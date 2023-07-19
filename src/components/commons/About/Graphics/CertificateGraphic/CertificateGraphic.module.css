@@ -1,0 +1,36 @@
+.base {
+  transition: all 0.3s;
+}
+
+.stroke {
+  stroke: var(--black);
+}
+
+.animated {
+  transition: all 0.3s;
+  transform-origin: center;
+}
+
+.bookColor {
+  transform: rotate(-10deg);
+}
+
+.certificate {
+  transform: rotate(20deg);
+}
+
+.bookCoverColor {
+  fill: #f0db4f;
+}
+
+.bookTitle {
+  fill: var(--black);
+}
+
+.certificateColor {
+  fill: var(--certificate);
+}
+
+.grey {
+  fill: var(--grey);
+}

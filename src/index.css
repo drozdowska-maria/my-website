@@ -1,9 +1,28 @@
 :root {
-  --background-light: #faf4fc;
+  --background-light: #f4f3ff;
   --white: #ffffff;
   --background-dark: #3d3d3d;
   --accent: #be1559;
   --black: #202020;
+  /* ANIMATION */
+  --square: #594ca6;
+  --grey: #d9d9d9;
+  --screen: #2e2e2e;
+  --brush-1-hand: #cc7979;
+  --brush-2-hand: #e0a765;
+  --brush-3-hand: #8baa80;
+  --cup: #6c4750;
+  /* GRAPHICS */
+  --plan: #000000;
+  --code: #5381db;
+  --certificate: #e32f2f;
+  --shirt: #c49d9d;
+  --skin: #fdf3e5;
+  --cheeks: #f9e1e1;
+  --hair: #805727;
+  --duck-body: #ffd53f;
+  --duck-beak: #ea7b58;
+  --light-bulb: #fff6e0;
 }
 
 * {
@@ -12,8 +31,4 @@
   margin: 0;
   font-family: "Maven Pro", sans-serif;
   color: var(--background-dark);
-}
-
-h1 {
-  font-weight: 400;
 }

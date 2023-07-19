@@ -12,9 +12,9 @@ const TechnologiesItem = ({ activeBg, Icon, index }: TechnologiesItemProps) => {
   const [isHovered, setIsHovered] = useState(false);
   return (
     <motion.div
-      exit={{ opacity: 0, transition: { delay: index * 0.06 } }}
-      animate={{ opacity: 1 }}
-      initial={{ opacity: 0 }}
+      exit={{ height: 0 }}
+      animate={{ opacity: 1, height: "100%" }}
+      initial={{ opacity: 0, height: "100%" }}
       transition={{ delay: index * 0.2 }}
       className={styles.wrapper}
       onMouseOver={() => setIsHovered(true)}

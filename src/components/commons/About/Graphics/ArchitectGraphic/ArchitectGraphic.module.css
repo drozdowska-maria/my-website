@@ -1,0 +1,23 @@
+.base {
+  transition: all 0.3s;
+  stroke: var(--black);
+  transform-origin: center;
+}
+
+.planColor {
+  fill: var(--plan);
+  transform: rotate(10deg) translateX(10px);
+}
+
+.codeColor {
+  fill: var(--code);
+  transform: rotate(-15deg);
+}
+
+.planBlack {
+  fill: var(--grey);
+}
+
+.codeBlack {
+  fill: var(--grey);
+}

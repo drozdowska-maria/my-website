@@ -18,11 +18,13 @@ const Header = ({ activeElement, setActiveElement }: HeaderProps) => {
   };
 
   const handleActiveElement = (value: ActiveElementType) => {
+    if (!value) {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
     setActiveElement(value);
     setOpenDrawer(false);
   };
   // TODO: translations
-  // TODO: mobile
   return (
     <div className={`${styles.wrapper} ${openDrawer ? styles.open : ""}`}>
       <div className={styles.container}>
