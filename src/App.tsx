@@ -7,6 +7,7 @@ import Footer from "./components/commons/Footer/Footer";
 import Technologies from "./components/commons/Technologies/Technologies";
 import { AnimatePresence } from "framer-motion";
 import About from "./components/commons/About/About";
+import Portfolio from "./components/commons/Portfolio/Portfolio";
 
 function App() {
   const [activeElement, setActiveElement] = useState<ActiveElementType>("");
@@ -29,6 +30,7 @@ function App() {
         <AnimatePresence mode="wait">
           {activeElement === "monitor" && <Technologies />}
           {activeElement === "drafting-triangle" && <About />}
+          {activeElement === "cup" && <Portfolio />}
         </AnimatePresence>
       </div>
       <div>
