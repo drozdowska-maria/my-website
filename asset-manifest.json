@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/my-website/static/css/main.9863051d.css",
+    "main.js": "/my-website/static/js/main.c86f3113.js",
+    "static/media/waterfall.png": "/my-website/static/media/waterfall.8e69104205921b459a53.png",
+    "static/media/volitality.png": "/my-website/static/media/volitality.74b08fe864a5bd17b6fc.png",
+    "static/media/sea.png": "/my-website/static/media/sea.de6a611872899360381f.png",
+    "static/media/floating_islands.png": "/my-website/static/media/floating_islands.bf7f98b08e5936269649.png",
+    "static/media/blowball_flowers.png": "/my-website/static/media/blowball_flowers.48059bbb9f109024cd7c.png",
+    "static/media/japan.png": "/my-website/static/media/japan.8d23beb0b89c17cca3e4.png",
+    "static/media/astronaut.png": "/my-website/static/media/astronaut.d50c25f478d3f58e2155.png",
+    "static/media/birds.png": "/my-website/static/media/birds.85b27c2ffdac2d61b6df.png",
+    "static/media/tuscany.png": "/my-website/static/media/tuscany.f7fe134da160d9d92ac0.png",
+    "static/media/tristan_and_isolde.png": "/my-website/static/media/tristan_and_isolde.01036409e24593006299.png",
+    "index.html": "/my-website/index.html",
+    "main.9863051d.css.map": "/my-website/static/css/main.9863051d.css.map",
+    "main.c86f3113.js.map": "/my-website/static/js/main.c86f3113.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9863051d.css",
+    "static/js/main.c86f3113.js"
+  ]
+}
