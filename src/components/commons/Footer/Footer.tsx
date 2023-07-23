@@ -11,7 +11,7 @@ const Footer = () => {
         <MailButtonIcon />
         <LinkedinButtonIcon />
       </div>
-      <p>Copyright © 2023, Maria Drozdowska, All rights reserved </p>
+      <p>© 2023 Maria Drozdowska</p>
     </div>
   );
 };

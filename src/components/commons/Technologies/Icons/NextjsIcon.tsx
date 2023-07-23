@@ -1,8 +1,11 @@
-const NextjsIcon = ({ fill = "black" }) => {
+import { TechnologiesIconProps } from "./types";
+
+const NextjsIcon = ({ fill = "black", ariaLabel }: TechnologiesIconProps) => {
   return (
     <svg
       width="106"
       height="106"
+      aria-label={ariaLabel}
       viewBox="0 0 106 106"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

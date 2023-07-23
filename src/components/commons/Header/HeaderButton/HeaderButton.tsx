@@ -1,4 +1,5 @@
 import { ButtonHTMLAttributes } from "react";
+
 import styles from "./HeaderButton.module.css";
 
 type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
@@ -11,6 +12,7 @@ const HeaderButton = (props: ButtonProps) => {
   return (
     <button
       {...restProps}
+      aria-selected={isActive}
       className={`${styles.button} ${className} ${
         isActive ? styles.activeButton : ""
       }`}

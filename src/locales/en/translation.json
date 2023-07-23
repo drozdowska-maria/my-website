@@ -1,0 +1,39 @@
+{
+  "logo": "Logo",
+  "about": "about me",
+  "technologies": "technologies",
+  "portfolio": "portfolio",
+  "openMenu": "Open menu",
+  "closeMenu": "Close menu",
+
+  "github": "Visit Github",
+  "linkedin": "Visit Linkedin",
+  "email": "Send email",
+
+  "draftingTriangle": "Drafting triangle",
+  "monitor": "Monitor",
+  "brushes": "Brushes",
+
+  "javascript": "JavaScript",
+  "react": "React",
+  "nextjs": "Next.js",
+  "reactNative": "React Native",
+  "typescript": "TypeScript",
+
+  "graduateTitle": "Bachelor's degree in architecture",
+  "paintingTitle": "Acrylic painting",
+  "architectTitle": "2 years of experience as an architect, website administration",
+  "certificateTitle": "Junior Front-end Developer certificate",
+  "programmerTitle": "Year of commercial programming experience",
+
+  "sea": "Sea",
+  "japan": "Japan",
+  "volitality": "Volitality",
+  "blowballFlowers": "Blowball flowers",
+  "floatingIslands": "Floating Islands",
+  "waterfall": "Waterfall",
+  "tristanAndIsolde": "Tristan and Isolde",
+  "astronaut": "An Astronaut",
+  "tuscany": "Tuscany",
+  "birds": "Birds"
+}

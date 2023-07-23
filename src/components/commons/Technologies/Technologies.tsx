@@ -7,9 +7,8 @@ const Technologies = () => {
     <div className={styles.wrapper}>
       {technologiesData.map((technology, index) => (
         <TechnologiesItem
-          key={technology.id}
-          activeBg={technology.activeBg}
-          Icon={technology.Icon}
+          key={technology.title}
+          item={technology}
           index={index}
         />
       ))}

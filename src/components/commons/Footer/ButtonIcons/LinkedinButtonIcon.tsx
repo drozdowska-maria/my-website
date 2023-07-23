@@ -1,9 +1,13 @@
+import { useTranslation } from "react-i18next";
 import styles from "./ButtonIcon.module.css";
 
 export const LinkedinButtonIcon = () => {
+  const { t } = useTranslation();
+
   return (
     <a
       className={styles.link}
+      aria-label={t("linkedin")}
       href="https://www.linkedin.com/in/drozdowska-maria/"
       target="_blank"
     >

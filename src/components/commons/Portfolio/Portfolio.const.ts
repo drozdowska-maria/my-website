@@ -35,7 +35,7 @@ export const portfolioData = [
     id: "portfolio-3",
   },
   {
-    title: "blowball_flowers",
+    title: "blowballFlowers",
     img: blowballFlowers,
     width: 402,
     height: 408,
@@ -43,7 +43,7 @@ export const portfolioData = [
     id: "portfolio-4",
   },
   {
-    title: "floating_islands",
+    title: "floatingIslands",
     img: floatingIslands,
     width: 494,
     height: 410,
@@ -59,7 +59,7 @@ export const portfolioData = [
     id: "portfolio-6",
   },
   {
-    title: "tristan_and_isolde",
+    title: "tristanAndIsolde",
     img: tristanAndIsolde,
     width: 278,
     height: 398,

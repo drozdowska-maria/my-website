@@ -1,6 +1,7 @@
 import { PortfolioItemType } from "../Portfolio.const";
 import { motion } from "framer-motion";
 import styles from "./PortfolioItem.module.css";
+import { useTranslation } from "react-i18next";
 
 interface PortfolioItemProps {
   item: PortfolioItemType;
@@ -8,6 +9,8 @@ interface PortfolioItemProps {
 }
 
 const PortfolioItem = ({ item, index }: PortfolioItemProps) => {
+  const { t } = useTranslation();
+
   return (
     <motion.div
       exit={{ height: 0 }}
@@ -18,7 +21,7 @@ const PortfolioItem = ({ item, index }: PortfolioItemProps) => {
     >
       <img src={item.img} width={item.width} height={item.height} />
       <div className={styles.title}>
-        <h6>{item.title}</h6>
+        <h6>{t(item.title)}</h6>
         <p>{item.createdAt}</p>
       </div>
     </motion.div>

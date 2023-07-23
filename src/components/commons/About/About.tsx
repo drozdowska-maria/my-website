@@ -5,6 +5,7 @@ import BrushesGraphic from "./Graphics/BrushesGraphic/BrushesGraphic";
 import ArchitectGraphic from "./Graphics/ArchitectGraphic/ArchitectGraphic";
 import CertificateGraphic from "./Graphics/CertificateGraphic/CertificateGraphic";
 import ProgrammerGraphic from "./Graphics/ProgrammerGraphic/ProgrammerGraphic";
+import { useTranslation } from "react-i18next";
 
 const aboutData = [
   {
@@ -35,6 +36,8 @@ const aboutData = [
 ];
 
 const About = () => {
+  const { t } = useTranslation();
+
   return (
     <div className={styles.wrapper}>
       {aboutData.map((about, index) => (
@@ -42,7 +45,7 @@ const About = () => {
           key={about.id}
           Graphic={about.Graphic}
           index={index}
-          title={about.title}
+          title={t(about.title)}
         />
       ))}
     </div>

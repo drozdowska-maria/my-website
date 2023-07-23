@@ -1,3 +1,5 @@
+import { useTranslation } from "react-i18next";
+
 import styles from "./Logo.module.css";
 
 interface LogoProps {
@@ -6,8 +8,15 @@ interface LogoProps {
 }
 
 const Logo = ({ onLogoClick, isActive }: LogoProps) => {
+  const { t } = useTranslation();
+
   return (
-    <button onClick={onLogoClick} className={styles.button}>
+    <button
+      onClick={onLogoClick}
+      aria-label={t("logo")}
+      aria-selected={isActive}
+      className={styles.button}
+    >
       <svg
         width="45"
         height="26"

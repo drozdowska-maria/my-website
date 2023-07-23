@@ -2,6 +2,7 @@ import { useState } from "react";
 import styles from "./AboutItem.module.css";
 import { motion } from "framer-motion";
 import { AboutGraphicProps } from "../Graphics/types";
+import { useTranslation } from "react-i18next";
 
 interface AboutItemProps {
   Graphic: ({ mode }: AboutGraphicProps) => JSX.Element;
@@ -11,6 +12,7 @@ interface AboutItemProps {
 
 const AboutItem = ({ Graphic, index, title }: AboutItemProps) => {
   const [isHovered, setIsHovered] = useState(false);
+
   return (
     <motion.div
       exit={{ height: 0 }}

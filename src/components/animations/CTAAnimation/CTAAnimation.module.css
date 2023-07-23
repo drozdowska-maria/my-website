@@ -29,13 +29,11 @@
   transition: all 0.3s;
   transform-origin: center;
   cursor: pointer;
-  scale: 1;
 }
 
 .monitor:hover,
 .monitorActive {
-  scale: 1.1;
-  transform: translateY(-20px);
+  transform: translateY(-20px) scale(1.1);
   transform-origin: center;
   transition: all 0.3s;
 }

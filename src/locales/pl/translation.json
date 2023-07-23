@@ -1,0 +1,39 @@
+{
+  "logo": "Logo",
+  "about": "o mnie",
+  "technologies": "technologie",
+  "portfolio": "portfolio",
+  "openMenu": "Otwórz menu",
+  "closeMenu": "Zamknij menu",
+
+  "github": "Odwiedź Github",
+  "linkedin": "Odwiedź Linkedin",
+  "email": "Wyślij wiadomość",
+
+  "draftingTriangle": "Ekierka",
+  "monitor": "Monitor",
+  "brushes": "Pędzle",
+
+  "javascript": "JavaScript",
+  "react": "React",
+  "nextjs": "Next.js",
+  "reactNative": "React Native",
+  "typescript": "TypeScript",
+
+  "graduateTitle": "Dyplom inzyniera architekta",
+  "paintingTitle": "Malarstwo akrylowe",
+  "architectTitle": "2 lata doświadczenia na stanowisku architekta, administracja strony www",
+  "certificateTitle": "Certyfikat Junior Front-end Developera",
+  "programmerTitle": "Rok doświadczenia komercyjnego w programowaniu",
+
+  "sea": "Morze",
+  "japan": "Japonia",
+  "volitality": "Ulotność",
+  "blowballFlowers": "Dmuchawce",
+  "floatingIslands": "Wyspy Uniesienia",
+  "waterfall": "Wodospad",
+  "tristanAndIsolde": "Tristan i Izolda",
+  "astronaut": "Astronauta",
+  "tuscany": "Toskania",
+  "birds": "Ptaki"
+}

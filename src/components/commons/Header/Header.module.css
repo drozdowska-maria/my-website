@@ -14,7 +14,7 @@
   width: 100%;
 }
 .container {
-  max-width: 1500px;
+  max-width: 1700px;
   width: 100%;
   padding-left: 50px;
   padding-right: 50px;
@@ -27,6 +27,18 @@
 .buttonWrapper {
   display: flex;
   gap: 40px;
+}
+
+.languageWrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.languageDivider {
+  height: 20px;
+  width: 1px;
+  background-color: var(--background-dark);
 }
 
 @media screen and (max-width: 600px) {

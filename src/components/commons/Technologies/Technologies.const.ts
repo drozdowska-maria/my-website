@@ -5,9 +5,9 @@ import ReactNativeIcon from "./Icons/ReactNativeIcon";
 import TypeScriptIcon from "./Icons/TypeScriptIcon";
 
 export const technologiesData = [
-  { activeBg: "#F0DB4F", Icon: JavaScriptIcon, id: "javascript" },
-  { activeBg: "#292929", Icon: ReactIcon, id: "react" },
-  { activeBg: "#FFFFFF", Icon: NextjsIcon, id: "nextjs" },
-  { activeBg: "#292929", Icon: ReactNativeIcon, id: "react-native" },
-  { activeBg: "#007ACC", Icon: TypeScriptIcon, id: "typescript" },
+  { activeBg: "#F0DB4F", Icon: JavaScriptIcon, title: "javascript" },
+  { activeBg: "#292929", Icon: ReactIcon, title: "react" },
+  { activeBg: "#FFFFFF", Icon: NextjsIcon, title: "nextjs" },
+  { activeBg: "#292929", Icon: ReactNativeIcon, title: "reactNative" },
+  { activeBg: "#007ACC", Icon: TypeScriptIcon, title: "typescript" },
 ];

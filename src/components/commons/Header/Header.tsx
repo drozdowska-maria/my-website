@@ -1,9 +1,13 @@
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
+
 import { ActiveElementType } from "../../animations/CTAAnimation/types";
 import HamburgerButton from "./HamburgerButton/HamburgerButton";
-import styles from "./Header.module.css";
 import HeaderButton from "./HeaderButton/HeaderButton";
 import Logo from "./Logo/Logo";
+import styles from "./Header.module.css";
+
+const languages = ["en", "pl"];
 
 interface HeaderProps {
   activeElement: ActiveElementType;
@@ -11,6 +15,8 @@ interface HeaderProps {
 }
 
 const Header = ({ activeElement, setActiveElement }: HeaderProps) => {
+  const { t, i18n } = useTranslation();
+
   const [openDrawer, setOpenDrawer] = useState(false);
 
   const toggleDrawer = () => {
@@ -24,7 +30,7 @@ const Header = ({ activeElement, setActiveElement }: HeaderProps) => {
     setActiveElement(value);
     setOpenDrawer(false);
   };
-  // TODO: translations
+
   return (
     <div className={`${styles.wrapper} ${openDrawer ? styles.open : ""}`}>
       <div className={styles.container}>
@@ -42,21 +48,35 @@ const Header = ({ activeElement, setActiveElement }: HeaderProps) => {
             isActive={activeElement === "drafting-triangle"}
             onClick={() => handleActiveElement("drafting-triangle")}
           >
-            o mnie
+            {t("about")}
           </HeaderButton>
           <HeaderButton
             isActive={activeElement === "monitor"}
             onClick={() => handleActiveElement("monitor")}
           >
-            technologie
+            {t("technologies")}
           </HeaderButton>
           <HeaderButton
             isActive={activeElement === "cup"}
             onClick={() => handleActiveElement("cup")}
           >
-            portfolio
+            {t("portfolio")}
           </HeaderButton>
-          {/* TODO: language dropdown */}
+          <div className={styles.languageWrapper}>
+            {languages.map((language, index, array) => (
+              <div className={styles.languageWrapper} key={language}>
+                <HeaderButton
+                  onClick={() => i18n.changeLanguage(language)}
+                  isActive={i18n.resolvedLanguage === language}
+                >
+                  {language}
+                </HeaderButton>
+                {index !== array.length - 1 && (
+                  <div className={styles.languageDivider} />
+                )}
+              </div>
+            ))}
+          </div>
         </div>
         <div
           className={`${styles.backdrop} ${openDrawer ? styles.open : ""}`}

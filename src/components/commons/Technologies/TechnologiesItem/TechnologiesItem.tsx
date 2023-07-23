@@ -1,14 +1,25 @@
-import { useState } from "react";
-import styles from "./TechnologiesItem.module.css";
 import { motion } from "framer-motion";
+import { useState } from "react";
+import { useTranslation } from "react-i18next";
+
+import { TechnologiesIconProps } from "../Icons/types";
+import styles from "./TechnologiesItem.module.css";
+
+interface TechnologiesItemType {
+  activeBg: string;
+  title: string;
+  Icon: (props: TechnologiesIconProps) => JSX.Element;
+}
 
 interface TechnologiesItemProps {
-  activeBg: string;
-  Icon: ({ fill }: { fill?: string }) => JSX.Element;
+  item: TechnologiesItemType;
+
   index: number;
 }
 
-const TechnologiesItem = ({ activeBg, Icon, index }: TechnologiesItemProps) => {
+const TechnologiesItem = ({ item, index }: TechnologiesItemProps) => {
+  const { t } = useTranslation();
+
   const [isHovered, setIsHovered] = useState(false);
   return (
     <motion.div
@@ -19,9 +30,12 @@ const TechnologiesItem = ({ activeBg, Icon, index }: TechnologiesItemProps) => {
       className={styles.wrapper}
       onMouseOver={() => setIsHovered(true)}
       onMouseOut={() => setIsHovered(false)}
-      style={{ backgroundColor: isHovered ? activeBg : "#3d3d3d" }}
+      style={{ backgroundColor: isHovered ? item.activeBg : "#3d3d3d" }}
     >
-      <Icon fill={isHovered ? undefined : "#d9d9d9c2"} />
+      <item.Icon
+        fill={isHovered ? undefined : "#d9d9d9c2"}
+        ariaLabel={t(item.title)}
+      />
     </motion.div>
   );
 };

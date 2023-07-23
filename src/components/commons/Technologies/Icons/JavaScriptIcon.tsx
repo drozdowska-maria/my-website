@@ -1,7 +1,13 @@
-const JavaScriptIcon = ({ fill = "#323330" }) => {
+import { TechnologiesIconProps } from "./types";
+
+const JavaScriptIcon = ({
+  fill = "#323330",
+  ariaLabel,
+}: TechnologiesIconProps) => {
   return (
     <svg
       width="90"
+      aria-label={ariaLabel}
       height="64"
       viewBox="0 0 90 64"
       fill="none"

@@ -1,8 +1,15 @@
+import { useTranslation } from "react-i18next";
 import styles from "./ButtonIcon.module.css";
 
 export const MailButtonIcon = () => {
+  const { t } = useTranslation();
+
   return (
-    <a className={styles.link} href="mailto:drozdowska.maria1@gmail.com">
+    <a
+      aria-label={t("mail")}
+      className={styles.link}
+      href="mailto:drozdowska.maria1@gmail.com"
+    >
       <svg
         role="button"
         width="41"

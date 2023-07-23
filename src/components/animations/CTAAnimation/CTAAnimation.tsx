@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import styles from "./CTAAnimation.module.css";
 import { ActiveElementType } from "./types";
 
@@ -10,6 +11,7 @@ export const CTAAnimation = ({
   activeElement,
   setActiveElement,
 }: CTAAnimationProps) => {
+  const { t } = useTranslation();
   return (
     <svg
       width="600"
@@ -29,6 +31,7 @@ export const CTAAnimation = ({
               : styles.draftingTriangleWhole
           }
           role="button"
+          aria-label={t("draftingTriangle")}
           onClick={() => setActiveElement("drafting-triangle")}
         >
           {/* ANIMATED ELEMENT */}
@@ -82,6 +85,7 @@ export const CTAAnimation = ({
                 : styles.monitor
             }
             role="button"
+            aria-label={t("monitor")}
             onClick={() => setActiveElement("monitor")}
           >
             <path
@@ -129,7 +133,7 @@ export const CTAAnimation = ({
         <g
           className={styles.cupWithBrushes}
           role="button"
-          aria-label="cup with brushes"
+          aria-label={t("brushes")}
           aria-pressed={activeElement === "cup"}
           onClick={() => setActiveElement("cup")}
         >
