@@ -23,6 +23,15 @@
   --duck-body: #ffd53f;
   --duck-beak: #ea7b58;
   --light-bulb: #fff6e0;
+  /* TECHNOLOGIES */
+  --javascript-icon: #323330;
+  --javascript-bg: #f0db4f;
+  --react-icon: #61dafb;
+  --react-bg: #292929;
+  --nextjs-icon: #000000;
+  --nextjs-bg: #ffffff;
+  --typescript-icon: #ffffff;
+  --typescript-bg: #007acc;
 }
 
 * {

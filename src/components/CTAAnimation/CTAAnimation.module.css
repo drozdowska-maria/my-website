@@ -1,0 +1,167 @@
+/* SVG STYLES */
+
+.svg {
+  height: 100%;
+  width: auto;
+}
+
+.stroke {
+  stroke: var(--background-dark);
+}
+
+.draftingTriangleFill {
+  fill: var(--square);
+  transition: fill-opacity 0.3s;
+  fill-opacity: 0.45;
+}
+
+.draftingTriangleFill:hover,
+.draftingTriangleFillActive {
+  fill: var(--square);
+  fill-opacity: 0.7;
+}
+
+.metal {
+  fill: var(--grey);
+}
+
+.monitor {
+  transition: all 0.3s;
+  transform-origin: center;
+  cursor: pointer;
+}
+
+.monitor:hover,
+.monitorActive {
+  transform: translateY(-20px) scale(1.1);
+  transform-origin: center;
+  transition: all 0.3s;
+}
+
+.monitor:hover .monitorScreen,
+.monitorScreenActive {
+  fill: var(--javascript-bg);
+  transition: all 0.5s;
+  stroke: var(--black);
+}
+
+.monitor:hover .monitorText,
+.monitorTextActive {
+  visibility: hidden;
+}
+
+.monitorScreen {
+  fill: var(--screen);
+  transition: all 0.5s;
+}
+
+.monitorText {
+  fill: var(--white);
+}
+
+.brushTip {
+  fill: var(--white);
+}
+
+.brush1Hand {
+  fill: var(--brush-1-hand);
+}
+
+.brush2Hand {
+  fill: var(--brush-2-hand);
+}
+
+.brush3Hand {
+  fill: var(--brush-3-hand);
+}
+
+.cupWithBrushes {
+  scale: 1;
+  transition: all 0.3s;
+}
+
+.cup {
+  fill: var(--cup);
+}
+
+.cupGlow {
+  fill: #ffffff20;
+}
+
+/* INFINITE ANIMATIONS */
+
+.draftingTriangle {
+  animation: 1s draftingTriangleAnimation ease-in-out alternate infinite 0.3s;
+}
+
+.draftingTriangleWhole {
+  scale: 1;
+  transition: scale 0.5s;
+}
+
+.draftingTriangleWhole:hover,
+.draftingTriangleWholeActive {
+  cursor: pointer;
+  scale: 1.1;
+  transition: scale 0.5s;
+}
+
+.cupWithBrushes:hover {
+  cursor: pointer;
+}
+
+.cursor {
+  animation: 0.5s cursorAnimation alternate infinite;
+}
+
+.brush1 {
+  animation: 1s brush1Animation alternate infinite;
+}
+
+.brush2 {
+  animation: 1s brush2Animation alternate infinite 0.5s;
+}
+
+.cupWithBrushes:hover .brush1,
+.cupWithBrushes:hover .brush2,
+.draftingTriangleWhole:hover .draftingTriangle,
+.active {
+  animation-play-state: paused;
+  -webkit-animation-play-state: paused;
+}
+
+@keyframes draftingTriangleAnimation {
+  from {
+    transform: rotate(6deg);
+  }
+  to {
+    transform: rotate(-2deg);
+  }
+}
+
+@keyframes cursorAnimation {
+  from {
+    fill: transparent;
+  }
+  to {
+    fill: var(--white);
+  }
+}
+
+@keyframes brush1Animation {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(-100px);
+  }
+}
+
+@keyframes brush2Animation {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(-110px);
+  }
+}

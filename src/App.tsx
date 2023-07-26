@@ -1,13 +1,14 @@
 import { useState } from "react";
-import CTAAnimation from "./components/animations/CTAAnimation/CTAAnimation";
-import { ActiveElementType } from "./components/animations/CTAAnimation/types";
-import styles from "./App.module.css";
-import Header from "./components/commons/Header/Header";
-import Footer from "./components/commons/Footer/Footer";
-import Technologies from "./components/commons/Technologies/Technologies";
 import { AnimatePresence } from "framer-motion";
-import About from "./components/commons/About/About";
-import Portfolio from "./components/commons/Portfolio/Portfolio";
+
+import { ActiveElementType } from "./components/CTAAnimation/types";
+import Header from "./components/Header/Header";
+import CTAAnimation from "./components/CTAAnimation/CTAAnimation";
+import Technologies from "./components/Technologies/Technologies";
+import About from "./components/About/About";
+import Portfolio from "./components/Portfolio/Portfolio";
+import Footer from "./components/Footer/Footer";
+import styles from "./App.module.css";
 
 function App() {
   const [activeElement, setActiveElement] = useState<ActiveElementType>("");
@@ -33,9 +34,7 @@ function App() {
           {activeElement === "cup" && <Portfolio />}
         </AnimatePresence>
       </div>
-      <div>
-        <Footer />
-      </div>
+      <Footer />
     </div>
   );
 }
